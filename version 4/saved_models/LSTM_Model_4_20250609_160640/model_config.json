@@ -1,0 +1,30 @@
+{
+    "model_name": "LSTM Model 4",
+    "sequence_length": 10,
+    "forecast_horizon": 4,
+    "feature_columns": [],
+    "target_column": "weather_condition",
+    "num_classes": 10,
+    "class_names": [
+        "Clear Sky \u2600\ufe0f",
+        "Cloudy \u2601\ufe0f",
+        "Heavy Drizzle \ud83c\udf27",
+        "Heavy Rain \ud83c\udf27",
+        "Light Drizzle \ud83c\udf26",
+        "Light Rain \ud83c\udf26",
+        "Mainly Clear \ud83c\udf24",
+        "Moderate Drizzle \ud83c\udf27",
+        "Moderate Rain \ud83c\udf27",
+        "Partly Cloudy \u26c5"
+    ],
+    "minority_classes": [
+        "Moderate Drizzle \ud83c\udf27",
+        "Light Rain \ud83c\udf26",
+        "Moderate Rain \ud83c\udf27",
+        "Heavy Drizzle \ud83c\udf27",
+        "Heavy Rain \ud83c\udf27"
+    ],
+    "timestamp": "20250609_160640",
+    "model_type": "SlidingWindowWeatherModel",
+    "framework": "TensorFlow/Keras"
+}
