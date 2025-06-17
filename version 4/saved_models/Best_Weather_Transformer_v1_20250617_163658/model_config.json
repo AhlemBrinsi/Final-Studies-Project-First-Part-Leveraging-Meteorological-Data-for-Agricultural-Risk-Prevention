@@ -1,0 +1,32 @@
+{
+    "model_name": "Best Weather Transformer v1",
+    "sequence_length": 10,
+    "forecast_horizon": 4,
+    "feature_columns": [],
+    "target_column": "weather_condition",
+    "num_classes": 8,
+    "class_names": [
+        "Clear Sky \u2600\ufe0f",
+        "Cloudy \u2601\ufe0f",
+        "Heavy Drizzle \ud83c\udf27",
+        "Light Drizzle \ud83c\udf26",
+        "Light Rain \ud83c\udf26",
+        "Moderate Drizzle \ud83c\udf27",
+        "Moderate/Heavy Rain \ud83c\udf27",
+        "Partly Clear \ud83c\udf24/\u26c5"
+    ],
+    "minority_classes": [
+        "Moderate Drizzle \ud83c\udf27",
+        "Light Rain \ud83c\udf26",
+        "Moderate/Heavy Rain \ud83c\udf27",
+        "Heavy Drizzle \ud83c\udf27"
+    ],
+    "timestamp": "20250617_163658",
+    "model_type": "TimeSeriesTransformerModel",
+    "framework": "TensorFlow/Keras",
+    "embed_dim": 64,
+    "num_heads": 8,
+    "ff_dim": 512,
+    "num_layers": 6,
+    "dropout_rate": 0.1
+}
