@@ -1,9 +1,10 @@
 🌱 AGRICULTURAL WEATHER RECOMMENDATION REPORT 🌱
 ==================================================
-Generated on: 2025-07-04 21:58:58
+Generated on: 2025-07-05 17:01:55
+Based on data up to: 2025-05-15
 Forecast period: 3 days
 
-📅 DAY 1 - Saturday, July 05
+📅 DAY 1 - Friday, May 16, 2025
 ------------------------------
 Weather: Cloudy ☁️ 🌤
 Temperature: 17.9°C - 26.1°C
@@ -32,7 +33,7 @@ Humidity: 47.2% - 83.0%
 
 ==================================================
 
-📅 DAY 2 - Sunday, July 06
+📅 DAY 2 - Saturday, May 17, 2025
 ------------------------------
 Weather: Cloudy ☁️ 🌤
 Temperature: 17.8°C - 28.8°C
@@ -61,7 +62,7 @@ Humidity: 47.4% - 85.0%
 
 ==================================================
 
-📅 DAY 3 - Monday, July 07
+📅 DAY 3 - Sunday, May 18, 2025
 ------------------------------
 Weather: Cloudy ☁️ 🌤
 Temperature: 17.9°C - 28.7°C
