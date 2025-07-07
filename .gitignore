@@ -1,0 +1,14 @@
+# Fichiers système / IDE
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.DS_Store
+
+# Environnements virtuels
+venv/
+.env/
+*.env
+
+# Fichiers lourds / résultats
+*.zip
