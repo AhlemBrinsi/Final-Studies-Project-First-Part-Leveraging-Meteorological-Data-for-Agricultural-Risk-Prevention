@@ -1,17 +1,17 @@
-# Final Studies Project First Part Leveraging Meteorological Data for Agricultural Risk Prevention
+# Final Studies Project – First Part: Leveraging Meteorological Data for Agricultural Risk Prevention
 
 ## Table of Contents
 1. [Introduction](#introduction)  
-2. [Data Preparation and Exploration](#dataset)  
-3. [Model Architecture Development](#methodology)  
-4. [Model Evaluation and Results](#models-used)  
+2. [Data Preparation and Exploration](#data-preparation-and-exploration)  
+3. [Model Architecture Development](#model-architecture-development)  
+4. [Model Evaluation and Results](#model-evaluation-and-results)  
 5. [Tools & Technologies](#tools--technologies)  
 6. [Conclusion](#conclusion)  
 
 ---
 
 ## Introduction
-This project addresses the critical need for accurate short-term weather forecasting in the agricultural sector by developing advanced deep learning models. This first part of the project focuses on **data preparation, exploratory analysis, feature engineering, model architecture development, Model Evaluation and Results**.
+This project addresses the critical need for accurate short-term weather forecasting in the agricultural sector by developing advanced deep learning models. This first part of the project focuses on **data preparation, exploratory analysis, feature engineering, model architecture development, and model evaluation**.
 
 ---
 
@@ -20,9 +20,9 @@ This project addresses the critical need for accurate short-term weather forecas
 ### Data Presentation
 
 #### Data Description
-The dataset was obtained from the OpenMeteo Historical Weather API and downloaded in CSV format (also available in XLSX and JSON). Historical data is derived from reanalysis datasets, combining observations from weather stations, aircraft, buoys, radar, and satellites to reconstruct past atmospheric conditions.
+The dataset was obtained from the **OpenMeteo Historical Weather API** and downloaded in CSV format (also available in XLSX and JSON). Historical data is derived from reanalysis datasets, combining observations from weather stations, aircraft, buoys, radar, and satellites to reconstruct past atmospheric conditions.
 
-Daily historical weather data for Monastir was collected from January 2000 to April 2025, containing **9,252 entries and 27 features**.
+Daily historical weather data for **Monastir** was collected from **January 2000 to April 2025**, containing **9,252 entries and 27 features**.
 
 #### Dataset Columns Summary
 
@@ -52,8 +52,8 @@ Daily historical weather data for Monastir was collected from January 2000 to Ap
 | wind_speed_10m_min | Min wind speed at 10m height | float64 |
 | wet_bulb_temperature_2m_min | Min wet-bulb temperature at 2m | float64 |
 | wet_bulb_temperature_2m_max | Max wet-bulb temperature at 2m | float64 |
-| soil_moisture_0_to_100cm_mean | Average soil moisture (0-100 cm) | float64 |
-| soil_temperature_0_to_100cm_mean | Average soil temperature (0-100 cm) | float64 |
+| soil_moisture_0_to_100cm_mean | Average soil moisture (0–100 cm) | float64 |
+| soil_temperature_0_to_100cm_mean | Average soil temperature (0–100 cm) | float64 |
 | et0_fao_evapotranspiration_sum | Reference evapotranspiration (FAO) | float64 |
 
 ---
@@ -71,35 +71,35 @@ The project involves **two predictive tasks**:
 ### Data Preparation
 
 #### Preprocessing Steps
-- Convert date to datetime format for temporal feature extraction.  
+- Convert `date` to datetime format for temporal feature extraction.  
 - Handle missing values and map `weather_code` to weather conditions.  
-- Normalize continuous features to [0,1] range.  
+- Normalize continuous features to the [0,1] range.  
 - Segment time series into sliding windows of 10 days.  
 - Chronologically split dataset into training, validation, and test sets.  
-- Reshape inputs to 3D arrays (samples, timesteps, features) for LSTM/Transformer.
+- Reshape inputs to 3D arrays `(samples, timesteps, features)` for LSTM/Transformer models.
 
 #### Handling Imbalanced Classes (Classification)
 - Group classes by frequency: Majority (>20%), Balanced (8–20%), Minority (<8%).  
 - Oversample minority classes and downsample majority classes.  
-- Generated 9,494 synthetic sequences for underrepresented classes.
+- Generated **9,494 synthetic sequences** for underrepresented classes.
 
 #### Regression Task Preparation
 - Exclude `weather_condition` and `date`.  
 - Prepare sliding windows for MISO and MIMO models.  
-- Outputs kept unnormalized for linear output layer.
+- Outputs kept unnormalized for the linear output layer.
 
 ---
 
 ### Exploratory Data Analysis (EDA)
 
 #### Feature Distributions
-- **Histograms** – Distribution of numerical features.  
+- **Histograms** – Numerical feature distributions.  
 - **Scatter Plots** – Relationships between temperature, rainfall, and humidity.  
 - **Bar Plots** – Monthly averages of max/min temperatures.  
 - **Heatmap** – Correlation analysis for feature selection.
 
 #### Classification Target Distribution
-- Cloudy dominates, Heavy Rain is rare.
+- Cloudy dominates, while Heavy Rain is rare.
 
 #### Seasonal Trends
 - Temperature shows clear yearly trends; humidity lacks clear seasonality.
@@ -116,8 +116,8 @@ The project involves **two predictive tasks**:
 - **Cyclic:** month_sin, month_cos, dayofyear_sin, dayofyear_cos  
 - **Temperature:** temp_range  
 - **Wind:** wind_gust_range, avg_wind_speed, wind_variability  
-- **Humidity/Dew point:** humidity_range, dew_point_range  
-- **Solar radiation:** sunshine_ratio, daylight_to_sunshine_ratio  
+- **Humidity/Dew Point:** humidity_range, dew_point_range  
+- **Solar Radiation:** sunshine_ratio, daylight_to_sunshine_ratio  
 - **Precipitation:** rain_today  
 - **Pressure:** pressure_range  
 
@@ -126,8 +126,8 @@ The project involves **two predictive tasks**:
 - Top features selected for derived features.
 
 #### Iterative Feature Engineering
-- Tier 1: Core weather features → lagged values, rolling statistics, trends, EWMA  
-- Tier 2: Physical variables → selected lagged values, rolling means/std, trends  
+- **Tier 1:** Core weather features → lagged values, rolling statistics, trends, EWMA  
+- **Tier 2:** Physical variables → selected lagged values, rolling means/std, trends  
 - Interaction and seasonal anomaly features added  
 - Low-importance non-temporal features removed
 
@@ -205,7 +205,7 @@ The project involves **two predictive tasks**:
 - Accuracy, Precision, Recall, F1-Score
 
 #### Hyperparameter Optimization
-- Using **Optuna**, tuning layers, hidden units, dropout, learning rate, batch size.
+- Using **Optuna** to tune layers, hidden units, dropout, learning rate, and batch size.
 
 #### Results Summary
 - Optimized LSTM achieved higher precision, recall, and F1-scores, especially for imbalanced classes.  
@@ -228,7 +228,7 @@ The project involves **two predictive tasks**:
 | Max Humidity    | Lower MSE | Higher MSE | MISO outperforms MIMO |
 | Min Humidity    | Lower MSE | Higher MSE | MISO significantly better |
 
-- **Insight:** MISO consistently outperforms MIMO, especially for humidity.  
+**Insight:** MISO consistently outperforms MIMO, especially for humidity.  
 
 ---
 
@@ -239,13 +239,14 @@ The project involves **two predictive tasks**:
 
 ---
 
-## Technologies Used
-- **Python**: NumPy, Pandas, Scikit-learn, TensorFlow/PyTorch  
+## Tools & Technologies
+- **Python:** NumPy, Pandas, Scikit-learn, TensorFlow/PyTorch  
 - **Jupyter Notebooks**  
-- **Visualization Tools**: Matplotlib, Seaborn  
+- **Visualization Tools:** Matplotlib, Seaborn  
 
+---
 
 ## Conclusion
 - **LSTM models** with MISO are highly effective for 3-day weather forecasts.  
 - **Hyperparameter tuning and preprocessing adjustments** improved performance for both classification and regression.  
-- **Transformer Encoder** offers a promising alternative for classification and potential regression tasks.  
+- **Transformer Encoder** offers a promising alternative for classification and potential regression tasks.
