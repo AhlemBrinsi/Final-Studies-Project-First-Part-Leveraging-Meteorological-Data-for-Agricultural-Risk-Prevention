@@ -231,6 +231,12 @@ The project involves **two predictive tasks**:
 
 ---
 
+## Technologies Used
+- **Python**: NumPy, Pandas, Scikit-learn, TensorFlow/PyTorch  
+- **Jupyter Notebooks**  
+- **Visualization Tools**: Matplotlib, Seaborn  
+
+
 ### Conclusion
 - **LSTM models** with MISO are highly effective for 3-day weather forecasts.  
 - **Hyperparameter tuning and preprocessing adjustments** improved performance for both classification and regression.  
