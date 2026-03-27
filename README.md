@@ -231,13 +231,6 @@ The project involves **two predictive tasks**:
 
 ---
 
-### Visual Evaluation
-- Confusion matrices for classification highlight misclassifications.  
-- Prediction vs Actual plots demonstrate MISO’s superior accuracy.  
-- Error distribution plots indicate residual patterns for further optimization.
-
----
-
 ### Conclusion
 - **LSTM models** with MISO are highly effective for 3-day weather forecasts.  
 - **Hyperparameter tuning and preprocessing adjustments** improved performance for both classification and regression.  
