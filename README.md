@@ -1,9 +1,17 @@
 # Final Studies Project First Part Leveraging Meteorological Data for Agricultural Risk Prevention
 
-## Section One: Data Analysis and Model Development
+## Table of Contents
+1. [Introduction](#introduction)  
+2. [Data Preparation and Exploration](#dataset)  
+3. [Model Architecture Development](#methodology)  
+4. [Model Evaluation and Results](#models-used)  
+5. [Tools & Technologies](#tools--technologies)  
+6. [Conclusion](#conclusion)  
 
-### Introduction
-This project addresses the critical need for accurate short-term weather forecasting in the agricultural sector by developing advanced deep learning models. This first section focuses on **data preparation, exploratory analysis, feature engineering, model architecture development** while the second section focus on **Model Evaluation and Results**.
+---
+
+## Introduction
+This project addresses the critical need for accurate short-term weather forecasting in the agricultural sector by developing advanced deep learning models. This first part of the project focuses on **data preparation, exploratory analysis, feature engineering, model architecture development, Model Evaluation and Results**.
 
 ---
 
@@ -189,7 +197,7 @@ The project involves **two predictive tasks**:
 
 ---
 
-## Section Two: Model Evaluation and Results
+## Model Evaluation and Results
 
 ### Classification Model Evaluation
 
@@ -237,7 +245,7 @@ The project involves **two predictive tasks**:
 - **Visualization Tools**: Matplotlib, Seaborn  
 
 
-### Conclusion
+## Conclusion
 - **LSTM models** with MISO are highly effective for 3-day weather forecasts.  
 - **Hyperparameter tuning and preprocessing adjustments** improved performance for both classification and regression.  
 - **Transformer Encoder** offers a promising alternative for classification and potential regression tasks.  
